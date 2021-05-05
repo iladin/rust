@@ -21,6 +21,7 @@ name: CI
       - auto
       - try
       - try-perf
+      - iladin/fix-84467-research
       - master
   pull_request:
     branches:
