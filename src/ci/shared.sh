@@ -55,6 +55,9 @@ function isWindows {
 function isLinux {
     [[ "${OSTYPE}" = "linux-gnu" ]]
 }
+function isWSL {
+     grep icrosoft /proc/version > /dev/null
+}
 
 function isCiBranch {
     if [[ $# -ne 1 ]]; then

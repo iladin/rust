@@ -11,5 +11,7 @@ if isLinux; then
     sudo mkdir -p /etc/docker
     echo '{"ipv6":true,"fixed-cidr-v6":"fd9a:8454:6789:13f7::/64"}' \
         | sudo tee /etc/docker/daemon.json
-    sudo service docker restart
+    if ! isWSL; then # Do not restart on WSL
+        sudo service docker restart
+    fi
 fi
